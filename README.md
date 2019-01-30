@@ -1,3 +1,10 @@
-# flutter
+# flutter_app
 
-Flutter
+A new Flutter application.
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).
+
+Android SDK 27.0.3
