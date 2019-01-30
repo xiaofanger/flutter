@@ -10,3 +10,4 @@ build/
 .*iml
 android/.gradle/
 android/gradle/
+.idea/
