@@ -3,8 +3,17 @@ import 'package:flutter_app/component/drawer_menu.dart';
 import './views/new_page.dart';
 import './route/fade_route.dart';
 import 'package:dio/dio.dart';
+import 'package:logging/logging.dart';
 
-void main() => runApp(new MyApp());
+void main() {
+  // 设置日志输出级别
+  Logger.root.level = Level.ALL;
+  // 设置输出格式
+  Logger.root.onRecord.listen((LogRecord rec) {
+    print('${rec.level.name}: ${rec.time}: ${rec.loggerName}: ${rec.message}');
+  });
+  runApp(new MyApp());
+}
 
 class MyApp extends StatelessWidget {
   @override
@@ -33,7 +42,10 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 1;
   String weather = "";
 
+  final Logger log = new Logger("Main");
+
   void _incrementCounter() {
+    log.info("当前按钮值: $_counter");
     setState(() {
       _counter++;
     });
